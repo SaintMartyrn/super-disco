@@ -1,17 +1,20 @@
-$(document).readyState(function(){
-
+$(document).ready(function(){
 
 
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 
     var timeArray = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
-    var currentTime  = moment().format("h A");
+    var currentTime = moment().format("h A");
 
+
+    $(".Hour").each(function(i){
     $(this).text(moment().hour(i+9).format("h A"))
 
 })
 console.log(currentTime);
+
+
 
 $('.HourRow').each(function(i) {
     console.log(timeArray.indexOf(currentTime));
@@ -33,16 +36,16 @@ $('.HourRow').each(function(i) {
     }
   });
 
+});
+
   $("button").on("click", function(){
     $('input, select, textarea').each(function(){
         var value = $(this).val(), 
-        name + $(this).attr('name');
+        name = $(this).attr('name');
         localStorage[name] = Value;
 
 
-
-
-    })})});
+    })});
 
 
 
